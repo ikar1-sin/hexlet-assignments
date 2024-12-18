@@ -22,8 +22,6 @@ class FileKVTest {
         String content = mapper.writeValueAsString(new HashMap<String, String>());
         Files.writeString(filepath, content, StandardOpenOption.TRUNCATE_EXISTING);
     }
-
     // BEGIN
-    
     // END
 }
