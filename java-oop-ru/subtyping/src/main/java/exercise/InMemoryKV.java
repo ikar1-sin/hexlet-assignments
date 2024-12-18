@@ -12,7 +12,7 @@ public class InMemoryKV implements KeyValueStorage {
     }
 
     public void set(String key, String value) {
-            data.put(key, value);
+        data.put(key, value);
     }
     @Override
     public void unset(String key) {
