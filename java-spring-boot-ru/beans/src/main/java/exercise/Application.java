@@ -13,7 +13,7 @@ import exercise.daytime.Night;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.annotation.RequestScope;
 // END
-@RequestScope
+
 @SpringBootApplication
 public class Application {
 
@@ -23,9 +23,10 @@ public class Application {
 
     // BEGIN
     @Bean
+    @RequestScope
     public Daytime getDayTime() {
         var timeNow = LocalDateTime.now();
-        if (timeNow.getHour() > 6 && timeNow.getHour() < 22) {
+        if (timeNow.getHour() >= 6 && timeNow.getHour() < 22) {
             return new Day();
         } else {
             return new Night();
