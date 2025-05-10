@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     application
-    id("org.springframework.boot") version "3.2.0"
+    id("org.springframework.boot") version "3.4.5"
     id("io.spring.dependency-management") version "1.1.4"
     id("com.github.ben-manes.versions") version "0.50.0"
     id("io.freefair.lombok") version "8.6"
@@ -33,10 +33,10 @@ dependencies {
     implementation("org.openapitools:jackson-databind-nullable:0.2.6")
 
     // BEGIN
-    implementation("org.springframework.security:spring-security-core:6.4.5")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
     // END
-
+    testImplementation("org.springframework.security:spring-security-test")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
